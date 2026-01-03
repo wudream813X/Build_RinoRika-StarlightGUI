@@ -23,7 +23,10 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
-
+      - name: clone
+        run: |
+            git clone https://github.com/RinoRika/StarlightGUI.git
+            cd StarlightGUI
       - name: Restore NuGet packages
         run: nuget restore StarlightGUI.sln
 
