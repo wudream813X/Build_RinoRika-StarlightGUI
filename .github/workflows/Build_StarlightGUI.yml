@@ -26,12 +26,12 @@ jobs:
       - name: clone
         run: |
             git clone https://github.com/RinoRika/StarlightGUI.git
-            cd StarlightGUI
+            ls
       - name: Restore NuGet packages
-        run: nuget restore StarlightGUI.sln
+        run: nuget restore StarlightGUI/StarlightGUI.sln
 
       - name: Build solution
-        run: msbuild StarlightGUI.sln /p:Configuration=Release /p:Platform=x64
+        run: msbuild StarlightGUI/StarlightGUI.sln /p:Configuration=Release /p:Platform=x64
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
